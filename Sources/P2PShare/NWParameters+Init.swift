@@ -31,7 +31,7 @@ extension NWParameters {
         
         sec_protocol_options_add_pre_shared_key(tlsOptions.securityProtocolOptions, psk, psk_identity)
 
-        let ciphersuite = tls_ciphersuite_t(rawValue: TLS_PSK_WITH_AES_128_GCM_SHA256)!
+        let ciphersuite = tls_ciphersuite_t(rawValue: UInt16(TLS_PSK_WITH_AES_128_GCM_SHA256))!
         sec_protocol_options_append_tls_ciphersuite(tlsOptions.securityProtocolOptions, ciphersuite)
 
         self.init(tls: tlsOptions, tcp: tcpOptions)
