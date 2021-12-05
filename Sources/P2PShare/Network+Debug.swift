@@ -5,7 +5,7 @@
 import Foundation
 import Network
 
-extension NWEndpoint {
+public extension NWEndpoint {
     var debugDescription: String {
         switch self {
         case .service(let name, let type, let domain, let interface):
@@ -22,7 +22,7 @@ extension NWEndpoint {
     }
 }
 
-extension NWBrowser.State {
+public extension NWBrowser.State {
     var debugDescription: String {
         switch self {
         case .cancelled:
@@ -39,7 +39,7 @@ extension NWBrowser.State {
     }
 }
 
-extension NWBrowser.Result.Change.Flags {
+public extension NWBrowser.Result.Change.Flags {
     var debugDescription: String {
         switch self {
         case .identical:
@@ -56,7 +56,7 @@ extension NWBrowser.Result.Change.Flags {
     }
 }
 
-extension NWListener.State {
+public extension NWListener.State {
     var debugDescription: String {
         switch self {
         case .cancelled:
@@ -75,7 +75,7 @@ extension NWListener.State {
     }
 }
 
-extension NWConnection.State {
+public extension NWConnection.State {
     var debugDescription: String {
         switch self {
         case .cancelled:
