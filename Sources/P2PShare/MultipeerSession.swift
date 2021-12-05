@@ -75,8 +75,8 @@ open class MultipeerSession: PeerBrowserDelegate, PeerListenerDelegate, PeerConn
     
     private var timer: Timer?
     private var browserResults: [NWBrowser.Result] = []
-    private var connections: [PeerConnection] = []
-    private var activePeers: [PeerInfo] = []
+    public private(set) var connections: [PeerConnection] = []
+    public private(set) var activePeers: [PeerInfo] = []
 
     private enum MessageType {
         static let ping: UInt32 = 0
