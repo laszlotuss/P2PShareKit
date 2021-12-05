@@ -12,15 +12,20 @@ protocol PeerConnectionDelegate: class {
 }
 
 /// PeerConnection manages an NWConnection instance to an NWEndpoint.
-class PeerConnection {
+public class PeerConnection {
     
     var peerInfo: PeerInfo?
     
     weak var delegate: PeerConnectionDelegate?
     
-    var connection: NWConnection?
+    public private(set) var connection: NWConnection?
     
-    let created = Date()
+    public let created = Date()
+    
+    public var lastSeen: Date {
+        lastPing
+    }
+
     var lastPing = Date()
     
     /// Create a peer connection from a connection request.
